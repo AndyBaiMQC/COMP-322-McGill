@@ -18,7 +18,7 @@ void countLetter(){
 	cout << "Please enter a sentence: ";
 	cin >> s;
 
-  	char c;
+  	string c;
 	cout << "Please enter a letter: ";
   	cin >> c;
 
