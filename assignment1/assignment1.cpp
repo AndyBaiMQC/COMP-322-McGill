@@ -9,7 +9,7 @@
 #include<string>
 #include<bits/stdc++.h>
 
-using namespace std
+using namespace std;
 
 // Question 1 - countLetter
 void countLetter(){
@@ -41,7 +41,7 @@ void convertPhonetic(){
 	cin >> w;
 
 	// Phonetics, using array of strings and access elements like a 2-D array later
-	string phonetic[26] = {"Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel",
+	string phonetics[26] = {"Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel",
 	"India", "Juliett", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", 
 	"Tango", "Uniform", "Victor", "Whiskey", "X-ray", "Yankee", "Zulu"};
 
