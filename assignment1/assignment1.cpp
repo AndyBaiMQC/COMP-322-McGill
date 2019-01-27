@@ -25,7 +25,7 @@ void countLetter(){
   	int count = 0;		// Initialize counter
   	for(unsigned int i = 0; i < s.length(); i++){
 		// Check character in string
-		if(tolower(s[i]) == tolower(c)){ 
+		if(tolower(s[i]) == tolower(c[0])){ 
 			count++;
 		}
 	}
