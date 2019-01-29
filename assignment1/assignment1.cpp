@@ -68,10 +68,21 @@ void convertPhonetic(){
 	   recursive	
 */
 
-// // Question 4
-// void factorial(){
-// 	//todo
-// };
+// Question 4
+void factorial(){
+    string x;
+    cout << "Enter a number: ";
+    cin >> x;
+    unsigned int m = stoi(x);
+    cout << fact(m);
+};
+
+unsigned int fact(unsigned int n) 
+{ 
+	if (n == 0) return 1; 
+
+	return n*fact(n-1); 
+};
 
 // // Question 5
 // 	Question 5
@@ -84,7 +95,7 @@ int main(){
 
 	countLetter();
 	convertPhonetic();
-	// factorial();
+	factorial();
 	// enhancedFactorial();
 
 	return 0;
