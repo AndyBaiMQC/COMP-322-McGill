@@ -71,10 +71,10 @@ void convertPhonetic(){
 // Question 4
 void factorial(){
     string x;
-    cout << "Enter a number: ";
+    cout << "Please enter a number: ";
     cin >> x;
     unsigned int m = stoi(x);
-    cout << fact(m);
+    cout << "The factorial of " << m << " is " << fact(m);
 };
 
 unsigned int fact(unsigned int n) 
@@ -84,10 +84,10 @@ unsigned int fact(unsigned int n)
 	return n*fact(n-1); 
 };
 
-// // Question 5
-// 	Question 5
+// Question 5
 // void enhancedFactorial(){
 // 	//todo
+	
 // };
 
 // Main Function
