@@ -16,11 +16,11 @@ void countLetter(){
 	// Get user inputs
 	string s;
 	cout << "Please enter a sentence: ";
-	cin >> s;
+	getline(cin, s);
 
   	string c;
 	cout << "Please enter a letter: ";
-  	cin >> c;
+  	getline(cin, c);
 
   	int count = 0;		// Initialize counter
   	for(unsigned int i = 0; i < s.length(); i++){
@@ -33,12 +33,36 @@ void countLetter(){
   	cout << "The letter " << c << " is repeated " << count << " times in your sentence\n";
 };
 
+char letterCheck(string c){
+	int i = 0;
+  	if(c.length() == 1){
+  	    if(isalpha(c[0]) == false){
+  	        cout << "ERROR: Invalid input. Please retype.\n";
+  	        cout << "Please enter a letter: ";
+  	        cin >> c;
+  	    }
+  	} else {
+  	    //redo this
+  	    while(c[i]){
+  	        if(isalpha(c[i])){
+  	            cout << "WARNING: Improper Input. Will proceed with first letter taken as default.\n";
+  	            c[0] = c[i];
+  	            break; //take first strip all
+  	        } else {
+  	            cout << "ERROR: Invalid input. Please retype. Make sure there is at least an alphabet.\n"; //print only once
+  	        }
+  	        i++;
+  	    }
+  	}
+
+};
+
 // Question 2 - convertPhonetic
 void convertPhonetic(){
 	// Get user inputs
 	string w;
 	cout << "Please enter a word: ";
-	cin >> w;
+	getline(cin, w);
 
 	// Phonetics, using array of strings and access elements like a 2-D array later
 	string phonetics[26] = {"Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel",
@@ -59,6 +83,10 @@ void convertPhonetic(){
     str.pop_back(); // Remove the last space character in the sentence
 
     cout << str << endl;
+};
+
+char wordCheck(string w){
+
 };
 
 
