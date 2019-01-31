@@ -64,6 +64,7 @@ void convertPhonetic(){
 	string w;
 	cout << "Please enter a word: ";
 	getline(cin, w);
+	letterCheck(w);
 
 	// Phonetics, using array of strings and access elements like a 2-D array later
 	string phonetics[26] = {"Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel",
@@ -86,14 +87,27 @@ void convertPhonetic(){
     cout << str << endl;
 };
 
-char wordCheck(string s){
+int wordCheck(string s){
 	int count=0;
-	for(int i = 0; i<s.length; i++){
+	for(int i = 0; i<s.length(); i++){
 		if(isalpha(s[i]) == true){
-
-		} else (isalpha())
+			//
+			count += 1;
+		} else {
+			//
+			count += 0;
+		}
+	};
+	if(count == 0){
+		cout << "No alphabet detected. \n"
+		string t;
+		cout << "Please enter a word: "
+		getline(cin, t);
+		s = t;
+	} else if(count <= s.length()){
+		cout << "WARNING: Non-alphabets detected and will be ignored."
 	}
-
+	return s;
 };
 
 
