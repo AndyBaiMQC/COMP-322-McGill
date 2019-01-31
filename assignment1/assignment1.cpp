@@ -33,15 +33,16 @@ void countLetter(){
   	cout << "The letter " << c << " is repeated " << count << " times in your sentence\n";
 };
 
-char letterCheck(string c){
+char letterCheck(string s){
 	int i = 0;
-  	if(c.length() == 1){
-  	    if(isalpha(c[0]) == false){
+  	if(s.length() == 1){
+  	    if(isalpha(s[0]) == false){
   	        cout << "ERROR: Invalid input. Please retype.\n";
   	        cout << "Please enter a letter: ";
-  	        cin >> c;
+  	        cin >> s;
+  	        letterCheck(s);
   	    }
-  	} else {
+  	} else if (s.length() > 1){
   	    //redo this
   	    while(c[i]){
   	        if(isalpha(c[i])){
@@ -85,7 +86,13 @@ void convertPhonetic(){
     cout << str << endl;
 };
 
-char wordCheck(string w){
+char wordCheck(string s){
+	int count=0;
+	for(int i = 0; i<s.length; i++){
+		if(isalpha(s[i]) == true){
+
+		} else (isalpha())
+	}
 
 };
 
