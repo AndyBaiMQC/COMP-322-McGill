@@ -7,6 +7,7 @@
 
 #include<iostream>
 #include<string>
+#include<cctype>
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -118,26 +119,29 @@ int wordCheck(string s){
 */
 
 // Question 4
+unsigned factorialTR(unsigned int n, unsigned int a) 
+{ 
+    if (n == 0)  return a; 
+  
+    return factorialTR(n-1, n*a); 
+} 
+   
+unsigned int fact(unsigned int n) 
+{ 
+   return factorialTR(n, 1); 
+} 
+
 void factorial(){
     string x;
     cout << "Please enter a number: ";
-    cin >> x;
+    getline(cin, x);
     unsigned int m = stoi(x);
     cout << "The factorial of " << m << " is " << fact(m);
 };
 
-unsigned int fact(unsigned int n) 
-{ 
-	if (n == 0) return 1; 
-
-	return n*fact(n-1); 
-};
 
 // Question 5
-// void enhancedFactorial(){
-// 	//todo
-	
-// };
+
 
 // Main Function
 int main(){
