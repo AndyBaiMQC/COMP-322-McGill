@@ -13,7 +13,8 @@
 using namespace std;
 
 // Question 1 - countLetter
-void countLetter(){
+void countLetter()
+{
 	// Get user inputs
 	string s;
 	cout << "Please enter a sentence: ";
@@ -34,7 +35,8 @@ void countLetter(){
   	cout << "The letter " << c << " is repeated " << count << " times in your sentence\n";
 };
 
-char letterCheck(string s){
+char letterCheck(string s)
+{
 	int i = 0;
   	if(s.length() == 1){
   	    if(isalpha(s[0]) == false){
@@ -60,7 +62,8 @@ char letterCheck(string s){
 };
 
 // Question 2 - convertPhonetic
-void convertPhonetic(){
+void convertPhonetic()
+{
 	// Get user inputs
 	string w;
 	cout << "Please enter a word: ";
@@ -88,7 +91,8 @@ void convertPhonetic(){
     cout << str << endl;
 };
 
-int wordCheck(string s){
+int wordCheck(string s)
+{
 	int count=0;
 	for(int i = 0; i<s.length(); i++){
 		if(isalpha(s[i]) == true){
@@ -125,31 +129,53 @@ unsigned factorialTR(unsigned int n, unsigned int a)
   
     return factorialTR(n-1, n*a); 
 } 
-   
-unsigned int fact(unsigned int n) 
-{ 
-   return factorialTR(n, 1); 
-} 
 
-void factorial(){
+void factorial()
+{
     string x;
     cout << "Please enter a number: ";
     getline(cin, x);
     unsigned int m = stoi(x);
-    cout << "The factorial of " << m << " is " << fact(m);
+    cout << "The factorial of " << m << " is " << factorialTR(m, 1);
 };
 
 
 // Question 5
+unsigned enhancedFactorialTR(unsigned int n, unsigned int a) 
 
+{ 
+    if(n == 0) return a;
+    if(n == 6) return 720*a;
+    else {
+        return factorialTR(n-1, n*a);
+    };
+} 
+
+void enhancedFactorial()
+{
+    // Input handling
+    string x;
+    cout << "Please enter a number: ";
+    getline(cin, x);
+
+    unsigned int m = stoi(x);
+    int foo[6] = {1, 2, 6, 24, 120, 720};
+
+    if(m > 0 && m < 7){
+        // Handle base case
+        cout << "The factorial of " << m << " is " << foo[m-1];
+    } else  {
+        cout << "The factorial of " << m << " is " << factorialTR(m, 1);
+    }
+};
 
 // Main Function
-int main(){
-
+int main()
+{
 	countLetter();
 	convertPhonetic();
 	factorial();
-	// enhancedFactorial();
+	enhancedFactorial();
 
 	return 0;
 };
