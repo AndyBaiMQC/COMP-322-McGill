@@ -1,14 +1,13 @@
 /*************************************
-	COMP 322 - Intro to C++
-	Assignment 1
-	Student Name: Yifan(Andy) Bai
-	ID: 260562421
+  COMP 322 - Intro to C++
+  Assignment 1
+  Student Name: Yifan(Andy) Bai
+  ID: 260562421
 **************************************/
 
 #include <iostream>
 #include <string>
 #include <cctype>
-#include<bits/stdc++.h>
 #include <typeinfo>
 #include <limits>
 
@@ -17,6 +16,7 @@ using namespace std;
 // Question 1 - countLetter
 void countLetter()
 {
+    cout << "<-- countLetter() -->" << endl;
     // Get user inputs
     string s;
     cout << "Please enter a sentence: ";
@@ -28,7 +28,7 @@ void countLetter()
     {
         // Get user inputs (letter)
         cout << "Please enter a letter: ";
-        cin.ignore(0, '\n'); /Ignore spaces/numbers
+        cin.ignore(0, '\n'); //Ignore spaces/numbers;
         getline(cin, c);
 
         // Check if input is letter. Invalid if length bigger than 1, or not alphabet
@@ -52,6 +52,7 @@ void countLetter()
 // Question 2 - convertPhonetic
 void convertPhonetic()
 {
+    cout << "<-- convertPhonetic() -->" << endl;
     // Get user inputs
     string w;
     cout << "Please enter a word: ";
@@ -73,16 +74,16 @@ void convertPhonetic()
                 str += ' '; // Add space between words
             }
         }
-    }
+    };
+    
     str.pop_back(); // Remove the last space character in the sentence
-
     cout << str << endl; // Print out the final result
 };
 
 /*
-	Question 3
+  Question 3
 
-	a) A recursive function is tail recursive when recursive call is the last thing executed by the function. 
+  a) A recursive function is tail recursive when recursive call is the last thing executed by the function. 
   It is considered better than non tail recursive functions as it can be optimized by compiler. The idea used 
   by compilers to optimize tail-recursive functions is simple: since the recursive call is the last statement, 
   there is nothing left to do in the current function, so no need to save current function’s stack frame. 
@@ -151,18 +152,19 @@ void convertPhonetic()
 unsigned long int factorialTR(unsigned long int n, unsigned long int a)
 {
     if (n == 0)   return a;
-    return factorialTR(n - 1, n * a);
-}
+    return   factorialTR(n - 1, n * a);
+};
 
 void factorial()
 {
+    cout << "<-- factorial() -->" << endl;
     // Get user inputs
     unsigned long int n;
     while(true)
     {
         cout << "Please enter a number: ";    // 21! is larger than long int data type can store
-        cin >> num;
-        if (cin.fail() or num < 0 or num > 20)
+        cin >> n;
+        if (cin.fail() || n < 0 || n > 20)
         {
             cin.clear();
             cin.ignore(1000, '\n');
@@ -171,7 +173,7 @@ void factorial()
         else break;
     }
 
-    cout << "The factorial of " << m << " is " << factorialTR(m, 1) << endl;
+    cout << "The factorial of " << n << " is " << factorialTR(n, 1) << endl;
 };
 
 // Question 5
@@ -180,21 +182,30 @@ unsigned enhancedFactorialTR(unsigned int n, unsigned int a)
     if (n == 0)   return a; // Base case
     if (n == 6)   return 720 * a; // Stop when reached 6 (use pre-calculated value)
     else   return enhancedFactorialTR(n - 1, n * a);
-}
+};
 
 void enhancedFactorial()
 {
-    // Input handling
-    string x;
-    cout << "Please enter a number: ";
-    getline(cin, x);
-    unsigned int m = stoi(x);
+    cout << "<-- enhancedFactorial() -->" << endl;
+    // Get user inputs
+    unsigned long int n;
+    while(true)
+    {
+        cout << "Please enter a number: ";    // 21! is larger than long int data type can store
+        cin >> n;
+        if (cin.fail() || n < 0 || n > 20)
+        {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Invalid input. Please try again. Make sure you enter a positive integer that is smaller than 21." << endl;
+        }
+        else break;
+    }
 
-    int foo[6] = {1, 2, 6, 24, 120, 720};
-
+    int foo[6] = {1, 2, 6, 24, 120, 720}; // Pre defined values
     // If the number is within the range of 1 to 6, no need to recursively compute; else, call Tail Recursion
-    if (m > 0 && m < 7)   cout << "The factorial of " << m << " is " << foo[m - 1] << endl;
-    else   cout << "The factorial of " << m << " is " << enhancedFactorialTR(m, 1) << endl;
+    if (n > 0 && n < 7)   cout << "The factorial of " << n << " is " << foo[n - 1] << endl;
+    else   cout << "The factorial of " << n << " is " << enhancedFactorialTR(n, 1) << endl;
 };
 
 // Main Function
