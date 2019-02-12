@@ -9,6 +9,7 @@
 #include <string>
 #include <cctype>
 #include<bits/stdc++.h>
+#include <typeinfo>
 #include <limits>
 
 using namespace std;
